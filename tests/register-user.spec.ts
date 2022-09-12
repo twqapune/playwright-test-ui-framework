@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("should not able to register with existing user", () => {
+test.describe("should not be able to register with existing user", () => {
   const userDetails = [
     {
       name: "firstUser",
@@ -55,7 +55,7 @@ test.describe("should not able to register with existing user", () => {
         await page
           .locator('[aria-label="Button to complete the registration"]')
           .click();
-        expect(page.locator(".error")).toHaveText("Email must be unique");
+        await expect(page.locator(".error")).toHaveText("Email must be unique");
       }
     });
   });
