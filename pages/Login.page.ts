@@ -34,7 +34,7 @@ public async login_function(valid_email,valid_password){
 public async validating_Login(){
      await this.navigateToAccount.click();
      await this.page.locator("[aria-label='Go to user profile']").nth(1).click();
-     await expect(this.page).toHaveURL('http://localhost:3000/profile');
+     await expect(this.page).toHaveURL('https://juice-shop.herokuapp.com/profile');
      await this.page.locator('span:has-text("Back")').click();
     }
 
